@@ -8,6 +8,7 @@ import Dubbing from "./pages/dubbing.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
 import Mail from "./pages/mail.jsx";
+import MailBoardLayout from "./components/UI/MailBoardLayout.jsx";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/mail",
-                element : <Mail/>
+                element : <Mail/>,
+            },
+            {
+                path: "/mail/:id",
+                element: <Mail/>,
             }
         ]
     }

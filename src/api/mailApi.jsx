@@ -16,9 +16,19 @@ export const mailApi = createApi({
         }),
         getCurrentMessage : build.query({
             query : ({ login, domain }) => `?action=getMessages&login=${login}&domain=${domain}`
+        }),
+        getSingleMessage : build.query({
+            query : ({ id, login, domain }) => {
+                console.log({ id, login, domain })
+                return `?action=readMessage&login=${login}&domain=${domain}&id=${id}`
+            }
         })
     }),
 })
 
 
-export const { useGetRandomMailQuery, useGetCurrentMessageQuery } = mailApi;
+export const {
+    useGetRandomMailQuery,
+    useGetCurrentMessageQuery,
+    useLazyGetSingleMessageQuery
+} = mailApi;
