@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {Button} from "antd";
-import {MessageOutlined, UserOutlined} from "@ant-design/icons";
+import {MailOutlined, MessageOutlined, UserOutlined} from "@ant-design/icons";
 
 const menuList = [
     {
@@ -17,9 +17,9 @@ const menuList = [
     },
     {
         key: 3,
-        label: "test",
-        path: "/test",
-        icon : "test"
+        label: "Mail",
+        path: "/mail",
+        icon : <MailOutlined />
     }
 ]
 

@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { api } from "./api/api.tsx";
+import { mailApi } from "./api/mailApi.jsx"
 
 export const store = configureStore({
     reducer: {
-        [api.reducerPath] : api.reducer
+        [mailApi.reducerPath] : mailApi.reducer
     },
     middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(api.middleware)
+        getDefaultMiddleware().concat(mailApi.middleware)
 })
 

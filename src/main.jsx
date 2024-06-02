@@ -7,6 +7,7 @@ import Profile from "./pages/profile.jsx";
 import Dubbing from "./pages/dubbing.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store.js";
+import Mail from "./pages/mail.jsx";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
                 path : "/dubbing",
                 element : <Dubbing/>
             },
+            {
+                path: "/mail",
+                element : <Mail/>
+            }
         ]
     }
 ]);
