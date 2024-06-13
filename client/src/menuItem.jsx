@@ -1,5 +1,4 @@
 import {Link} from "react-router-dom";
-import {Button} from "antd";
 import {MailOutlined, MessageOutlined, UserOutlined} from "@ant-design/icons";
 
 const menuList = [
@@ -24,16 +23,15 @@ const menuList = [
 ]
 
 
-const MenuList = ({ isDark }) => {
+const MenuList = () => {
     return (
-        <ul className='flex gap-4'>
+        <ul className='flex flex-col gap-3 items-center'>
             {
                 menuList.map(({key, label, path, icon}) => (
-                    <li key={key}>
-                        <Link to={path}>
-                            <Button icon={icon} className={` ${isDark && 'bg-gray-900 text-white'}`} size={"middle"}>
+                    <li className='w-full rounded-[12px] min-w-[100px] h-[50px] flex justify-center items-center border border-black' key={key}>
+                        <Link className='w-full h-full flex items-center justify-center gap-2 text-[18px]' to={path}>
+                                {icon}
                                 {label}
-                            </Button>
                         </Link>
 
                     </li>

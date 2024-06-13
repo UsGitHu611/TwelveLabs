@@ -1,7 +1,7 @@
 const MailBoardLayout = ({children}) => {
     return (
-        <ul className='flex items-center justify-center px-10 py-10 min-w-[900px] bg-blue-300 min-h-[450px]
-                dark:bg-black dark:text-white text-[12px] relative border max-w-[1000px]'>
+        <ul className='flex justify-center items-center px-10 py-10 min-w-[900px] bg-blue-200 min-h-[630px]
+        text-[12px] relative border max-w-[1000px] rounded-[4px]'>
             {children}
         </ul>
     )

@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import { store } from "./store.js";
 import Mail from "./pages/mail.jsx";
 import Home from "./pages/Home.jsx";
+import CurrentMail from "./components/CurrentMail.jsx";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
                 element : <Mail/>,
             }
         ]
-    }
+    },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -5,6 +5,7 @@ import CurrentMail from "../components/CurrentMail.jsx";
 import MailBoardLayout from "../components/MailBoardLayout.jsx";
 import useGetMailMessage from "../hook/useGetMailMessage.jsx";
 import {useState} from "react";
+
 const Mail = () => {
     const [isChecked, setIsChecked] = useState(false);
     const { randomMail, refreshMail, innerMessage } = useGetMailMessage();
@@ -13,14 +14,20 @@ const Mail = () => {
         setIsChecked(true);
     }
 
-    return (
-        <div className='gap-6 min-h-full'>
-            <div className='flex flex-col'>
+    const refreshEmail = async () => {
+        setIsChecked(false);
+        refreshMail()
+    }
 
-                <div className='flex flex-row'>
+    return (
+        <div className='gap-6 min-h-full flex flex-col items-center'>
+
+            <div className='flex flex-col items-center gap-2'>
+
+                <div className='flex flex-row gap-2'>
                     <h1 className='text-2xl'>Ваш Mail</h1>
                     <Button
-                        onClick={() => refreshMail()}
+                        onClick={refreshEmail}
                         danger
                         className='rounded-full'
                         style={{background:"transparent"}}
@@ -37,7 +44,7 @@ const Mail = () => {
                 </pre>
 
             </div>
-            <MailBoardLayout currentMail={innerMessage}>
+            <MailBoardLayout>
                 {
                     !innerMessage ? (
                         <div>
